@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ad0cfc3-ca70-4ce8-b7bb-65312f13e21b" name="Changes" comment="user registration">
+    <list default="true" id="9ad0cfc3-ca70-4ce8-b7bb-65312f13e21b" name="Changes" comment="pagination">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726391173931</updated>
       <workItem from="1726391183704" duration="227000" />
-      <workItem from="1726393408178" duration="10597000" />
+      <workItem from="1726393408178" duration="11868000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <option name="closed" value="true" />
@@ -157,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726423184417</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="pagination">
+      <option name="closed" value="true" />
+      <created>1726425115547</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726425115547</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +182,7 @@
     <MESSAGE value="hello blog!" />
     <MESSAGE value="create post" />
     <MESSAGE value="user registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="user registration" />
+    <MESSAGE value="pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="pagination" />
   </component>
 </project>

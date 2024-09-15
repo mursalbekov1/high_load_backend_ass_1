@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ post.title }}</title>
-</head>
-<body>
-    <h1>{{ post.title }}</h1>
-    <p>by {{ post.author }}</p>
-    <p>Created at: {{ post.created_at }}</p>
-    <p>{{ post.content }}</p>
-    <a href="{% url 'post_list' %}">Back to list</a>
-</body>
-</html>
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+
+<hr>
+
+<h2>Comments</h2>
+<ul>
+    {% for comment in comments %}
+        <li>
+            <strong>{{ comment.author }}:</strong> {{ comment.text }} <br>
+            <small>{{ comment.created_at }}</small>
+        </li>
+    {% empty %}
+        <li>No comments yet.</li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<h2>Add a Comment</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Comment</button>
+</form>
