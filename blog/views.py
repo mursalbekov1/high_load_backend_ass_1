@@ -1,5 +1,6 @@
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404, redirect
 from blog.forms import PostForm, UserRegistrationForm
@@ -10,7 +11,12 @@ def hello_world(request):
 
 def post_list(request):
     posts = Post.objects.all()
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    paginator = Paginator(posts, 5)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'blog/post_list.html', {'page_obj': page_obj})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
