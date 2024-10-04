@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
 ]
 
+AUTH_USER_MODEL = 'blog.User'
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -70,7 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "my_blog.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
