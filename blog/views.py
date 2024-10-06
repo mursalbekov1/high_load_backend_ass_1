@@ -5,12 +5,15 @@ from django.http import HttpResponse, HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404, redirect
 from blog.forms import PostForm, UserRegistrationForm, CommentForm
 from blog.models import Post
+from django.views.decorators.cache import cache_page
+from django.core.cache import cache
 
 def hello_world(request):
     return HttpResponse("Hello, Blog!")
 
+@cache_page(60)
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.prefetch_related('comments').all()
     paginator = Paginator(posts, 5)
 
     page_number = request.GET.get('page')
@@ -75,6 +78,14 @@ def register(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+
+    cache_key = f'post_{pk}_comment_count'
+    comment_count = cache.get(cache_key)
+
+    if comment_count is None:
+        comment_count = post.comments.count()
+        cache.set(cache_key, comment_count, timeout=60)
+
     comments = post.comments.all()
 
     if request.method == 'POST':
@@ -84,6 +95,7 @@ def post_detail(request, pk):
             comment.post = post
             comment.author = request.user
             comment.save()
+            cache.delete(cache_key)
             return redirect('post_detail', pk=post.pk)
     else:
         form = CommentForm()

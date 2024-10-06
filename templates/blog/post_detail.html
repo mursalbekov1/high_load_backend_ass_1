@@ -1,3 +1,4 @@
+{% load cache %}
 <h1>{{ post.title }}</h1>
 <p>{{ post.content }}</p>
 
@@ -5,14 +6,16 @@
 
 <h2>Comments</h2>
 <ul>
-    {% for comment in comments %}
-        <li>
-            <strong>{{ comment.author }}:</strong> {{ comment.text }} <br>
-            <small>{{ comment.created_at }}</small>
-        </li>
-    {% empty %}
-        <li>No comments yet.</li>
-    {% endfor %}
+    {% cache 60 "recent_comments" post.id %}
+        {% for comment in comments %}
+            <li>
+                <strong>{{ comment.author }}:</strong> {{ comment.text }} <br>
+                <small>{{ comment.created_at }}</small>
+            </li>
+        {% empty %}
+            <li>No comments yet.</li>
+        {% endfor %}
+    {% endcache %}
 </ul>
 
 <hr>
