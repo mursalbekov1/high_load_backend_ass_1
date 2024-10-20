@@ -1,0 +1,13 @@
+runtime: python310  # Укажите версию Python, которую вы используете
+entrypoint: gunicorn -b :$PORT my_blog.wsgi  # Укажите путь к вашему WSGI приложению
+
+env: standard
+
+handlers:
+  - url: /static
+    static_dir: staticfiles
+  - url: /.*
+    script: auto
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: "my_blog.settings"

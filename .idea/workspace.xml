@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ad0cfc3-ca70-4ce8-b7bb-65312f13e21b" name="Changes" comment="indexing and override user class">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/045033c5-1d26-40af-aa14-4071ce771bb4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/045033c5-1d26-40af-aa14-4071ce771bb4.xml" afterDir="false" />
+    <list default="true" id="9ad0cfc3-ca70-4ce8-b7bb-65312f13e21b" name="Changes" comment="implemented low-level caching and configured django to use redis as the cache backend">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/test_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openapi.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -118,7 +122,12 @@
       <workItem from="1727935421029" duration="7000" />
       <workItem from="1728045192050" duration="3406000" />
       <workItem from="1728133341885" duration="856000" />
-      <workItem from="1728163312553" duration="3309000" />
+      <workItem from="1728163312553" duration="6766000" />
+      <workItem from="1728640567746" duration="2540000" />
+      <workItem from="1728890387592" duration="607000" />
+      <workItem from="1728973399584" duration="1000" />
+      <workItem from="1729432699266" duration="1587000" />
+      <workItem from="1729434295914" duration="3709000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <option name="closed" value="true" />
@@ -192,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728049780590</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="implemented low-level caching and configured django to use redis as the cache backend">
+      <option name="closed" value="true" />
+      <created>1728210580143</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728210580143</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +236,7 @@
     <MESSAGE value="pagination" />
     <MESSAGE value="comments" />
     <MESSAGE value="indexing and override user class" />
-    <option name="LAST_COMMIT_MESSAGE" value="indexing and override user class" />
+    <MESSAGE value="implemented low-level caching and configured django to use redis as the cache backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented low-level caching and configured django to use redis as the cache backend" />
   </component>
 </project>

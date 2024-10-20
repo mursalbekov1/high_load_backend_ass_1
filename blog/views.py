@@ -7,9 +7,14 @@ from blog.forms import PostForm, UserRegistrationForm, CommentForm
 from blog.models import Post
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from django.http import JsonResponse
+
 
 def hello_world(request):
     return HttpResponse("Hello, Blog!")
+
+def health_check(request):
+    return JsonResponse({'status': 'ok'})
 
 @cache_page(60)
 def post_list(request):
